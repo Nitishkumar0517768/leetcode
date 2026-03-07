@@ -1,0 +1,14 @@
+// Last updated: 3/7/2026, 10:02:46 PM
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findMin = function(nums) {
+    let min = nums[0];
+    for(let i=0; i<nums.length; i++){
+        if(min > nums[i]){
+            min = nums[i];
+        }
+    }
+    return min;
+};
