@@ -1,4 +1,4 @@
-// Last updated: 4/6/2026, 9:47:51 AM
+// Last updated: 4/6/2026, 10:11:05 AM
 1#include <algorithm>
 2class Solution {
 3public:
@@ -8,7 +8,7 @@
 7
 8        int i=0;
 9        int j=1;
-10        while(i<n){
+10        while(j<n){
 11            if(nums[i] != nums[j]){
 12                i++;
 13                j++;
