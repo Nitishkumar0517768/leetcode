@@ -1,4 +1,4 @@
-// Last updated: 4/14/2026, 2:02:09 PM
+// Last updated: 4/14/2026, 2:02:17 PM
 class Solution {
 public:
     int maxProductDifference(vector<int>& nums) {
