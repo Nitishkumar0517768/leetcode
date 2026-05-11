@@ -1,17 +1,18 @@
-// Last updated: 5/11/2026, 11:22:12 AM
+// Last updated: 5/11/2026, 11:41:54 AM
 1class Solution {
 2public:
-3    int lengthOfLastWord(string s) {
-4        int count = 0;
-5
-6        for(int i=s.size()-1; i>=0; i--){
-7            if(s[i] != ' '){
-8                count++;
-9            }
-10            if(s[i] == ' ' && count > 0){
-11                break;
-12            }
-13        }
-14        return count;
-15    }
-16};
+3    vector<int> plusOne(vector<int>& digits) {
+4
+5        for(int i=digits.size()-1; i>=0; i--){
+6            if(digits[i] < 9){
+7                digits[i] += 1;
+8                return digits;
+9            } 
+10            digits[i] = 0;
+11            
+12        }
+13        digits.insert(digits.begin(), 1);
+14
+15        return digits;
+16    }
+17};
