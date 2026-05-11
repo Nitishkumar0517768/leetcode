@@ -1,15 +1,17 @@
-// Last updated: 5/11/2026, 11:12:05 AM
+// Last updated: 5/11/2026, 11:22:12 AM
 1class Solution {
 2public:
-3    int removeElement(vector<int>& nums, int val) {
-4       int count = 0;
+3    int lengthOfLastWord(string s) {
+4        int count = 0;
 5
-6       for(int i=0; i<nums.size(); i++){
-7            if(nums[i] != val){
-8                nums[count] = nums[i];
-9                count ++;
-10            }
-11       }
-12       return count;
-13    }
-14};
+6        for(int i=s.size()-1; i>=0; i--){
+7            if(s[i] != ' '){
+8                count++;
+9            }
+10            if(s[i] == ' ' && count > 0){
+11                break;
+12            }
+13        }
+14        return count;
+15    }
+16};
