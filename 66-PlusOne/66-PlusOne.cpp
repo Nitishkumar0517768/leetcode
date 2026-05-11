@@ -1,28 +1,14 @@
-// Last updated: 5/11/2026, 12:49:23 PM
+// Last updated: 5/11/2026, 12:58:53 PM
 1class Solution {
 2public:
-3    bool isPalindrome(string s) {
-4       string res = "";
+3    int findMin(vector<int>& nums) {
+4        int min = nums[0];
 5
-6       for(int i=0; i<s.size(); i++){
-7        if((s[i] >='A' && s[i] <='Z') || (s[i]>='a' && s[i]<='z') || (s[i]>='0' && s[i]<='9')){
-8            s[i] = tolower(s[i]);
-9            res.push_back(s[i]);
+6        for(int i=0; i<nums.size(); i++){
+7            if(nums[i] < min){
+8                min = nums[i];
+9            }
 10        }
-11       }
-12
-13       int i=0;
-14       int j=res.size() -1;
-15
-16       while(j>i){
-17        if(res[i] == res[j]){
-18            i++;
-19            j--;
-20        }
-21        else{
-22            return false;
-23        }
-24       }
-25       return true;
-26    }
-27};
+11        return min;
+12    }
+13};
