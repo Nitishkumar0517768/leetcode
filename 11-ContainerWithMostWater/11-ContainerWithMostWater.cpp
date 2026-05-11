@@ -1,22 +1,15 @@
-// Last updated: 5/11/2026, 7:43:17 AM
+// Last updated: 5/11/2026, 8:01:41 AM
 1class Solution {
 2public:
-3    int maxAscendingSum(vector<int>& nums) {
-4        int sum = nums[0];
-5        int maxSum = nums[0];
-6
-7        for(int i=1; i<nums.size(); i++){
-8            if(nums[i] > nums[i-1]){
-9                sum = sum + nums[i];
-10            }
-11            else{
-12                sum = nums[i];
-13            }
-14
-15            if(sum > maxSum){
-16                maxSum = sum;
-17            }
-18        }
-19        return maxSum;
-20    }
-21};
+3    bool judgeCircle(string moves) {
+4        unordered_map<char, int> freq;
+5
+6        for(char ch : moves){
+7            freq[ch]++;
+8        }
+9        if(freq['L'] == freq['R']  &&  freq['U'] == freq['D']){
+10            return true;
+11        }
+12        return false;
+13    }
+14};
