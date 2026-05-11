@@ -1,15 +1,10 @@
-// Last updated: 5/11/2026, 11:49:34 AM
+// Last updated: 5/11/2026, 12:06:01 PM
 1class Solution {
 2public:
-3    vector<int> plusOne(vector<int>& digits) {
-4        for(int i=digits.size()-1; i>=0; i--){
-5            if(digits[i] <  9){
-6                digits[i] += 1;
-7                return digits;
-8            }
-9            digits[i] = 0;
-10        }
-11        digits.insert(digits.begin(), 1);
-12        return digits;
-13    }
-14};
+3    bool search(vector<int>& nums, int target) {
+4        for(int i=0; i<nums.size(); i++){
+5            if(nums[i] == target) return true;
+6        }
+7        return false;
+8    }
+9};
