@@ -1,18 +1,13 @@
-// Last updated: 5/12/2026, 9:26:53 PM
-1/**
-2 * Definition for a binary tree node.
-3 * struct TreeNode {
-4 *     int val;
-5 *     TreeNode *left;
-6 *     TreeNode *right;
-7 *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
-8 *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-9 *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
-10 * };
-11 */
-12class Solution {
-13public:
-14    bool checkTree(TreeNode* root) {
-15        return (root->left->val + root->right->val == root->val);
-16    }
-17};
+// Last updated: 5/12/2026, 9:33:12 PM
+1class Solution {
+2public:
+3    string defangIPaddr(string address) {
+4        for(int i=0; i<address.size(); i++){
+5            if(address[i] == '.'){
+6                address.replace(i, 1, "[.]");
+7                i += 2;
+8            }
+9        }
+10        return address;
+11    }
+12};
