@@ -1,25 +1,28 @@
-// Last updated: 5/14/2026, 9:11:31 AM
+// Last updated: 5/14/2026, 9:23:59 AM
 1class Solution {
 2public:
-3    int dominantIndex(vector<int>& nums) {
-4        int max = INT_MIN;
-5        int secMax = INT_MIN;
-6        int k = 0;
-7
-8        for(int i=0; i<nums.size(); i++){
-9            if(nums[i] > max){
-10                secMax = max;
-11                max = nums[i];
-12                k = i;
+3    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& image) {
+4        for(int i=0; i<image.size(); i++){
+5            int j = 0;
+6            int k = image[i].size()-1;
+7            while(k > j){
+8                int temp = image[i][j];
+9                image[i][j] = image[i][k];
+10                image[i][k] = temp;
+11                j++;
+12                k--;
 13            }
-14            else if(nums[i] > secMax){
-15                secMax = nums[i];
-16            }
-17        }
-18
-19        if(secMax*2 <= max){
-20            return k;
-21        }
-22        return -1;
-23    }
-24};
+14
+15            for(int n=0; n<image[i].size(); n++){
+16                if(image[i][n] == 0){
+17                    image[i][n] = 1;
+18                }
+19                else{
+20                    image[i][n] = 0;
+21                }
+22            }
+23
+24        }
+25        return image;
+26    }
+27};
