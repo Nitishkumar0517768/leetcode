@@ -1,27 +1,18 @@
-// Last updated: 5/6/2026, 10:28:41 PM
+// Last updated: 5/15/2026, 9:17:45 PM
 1class Solution {
 2public:
-3    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-4        int i=m-1;
-5        int j=n-1;
-6        int k=m+n -1;
-7
-8        while(i>=0 && j>=0){
-9            if(nums1[i] > nums2[j]){
-10                nums1[k] = nums1[i];
-11                i--;
+3    int countOperations(int num1, int num2) {
+4        int count = 0;
+5        
+6        while(num1!=0 && num2!=0){
+7            if(num1 < num2){
+8                num2 = num2 - num1;
+9            }
+10            else{
+11                num1 = num1 - num2;
 12            }
-13            else{
-14                nums1[k] = nums2[j];
-15                j--;
-16            }
-17            k--;
-18        }   
-19
-20        while(j>=0){
-21            nums1[k] = nums2[j];
-22            j--;
-23            k--;
-24        }
-25    }
-26};
+13            count++;
+14        }
+15        return count;
+16    }
+17};
