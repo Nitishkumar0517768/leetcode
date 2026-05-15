@@ -1,18 +1,20 @@
-// Last updated: 5/15/2026, 9:17:45 PM
+// Last updated: 5/15/2026, 9:38:09 PM
 1class Solution {
 2public:
-3    int countOperations(int num1, int num2) {
-4        int count = 0;
-5        
-6        while(num1!=0 && num2!=0){
-7            if(num1 < num2){
-8                num2 = num2 - num1;
+3    long long removeZeros(long long n) {
+4        long long rev = 0;
+5
+6        while(n >0){
+7            if(n%10 !=0){
+8                rev = rev*10 + n%10;
 9            }
-10            else{
-11                num1 = num1 - num2;
-12            }
-13            count++;
-14        }
-15        return count;
-16    }
-17};
+10                n /= 10;
+11        }
+12        
+13        string straight = to_string(rev);
+14        reverse(straight.begin(), straight.end());
+15
+16
+17        return stoll(straight);
+18    }
+19};
