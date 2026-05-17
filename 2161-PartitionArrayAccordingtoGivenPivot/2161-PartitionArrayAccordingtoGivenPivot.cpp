@@ -1,26 +1,15 @@
-// Last updated: 5/17/2026, 1:37:50 PM
-1class Solution {
-2public:
-3    vector<int> pivotArray(vector<int>& nums, int pivot) {
-4        vector<int> arr;
-5
-6        for(int i=0; i<nums.size(); i++){
-7            if(nums[i] < pivot){
-8                arr.push_back(nums[i]);
-9            }
-10        }
-11
-12        for(int i=0; i<nums.size(); i++){
-13            if(nums[i] == pivot){
-14                arr.push_back(nums[i]);
-15            }
-16        }
-17        
-18        for(int i=0; i<nums.size(); i++){
-19            if(nums[i] > pivot){
-20                arr.push_back(nums[i]);
-21            }
-22        }
-23        return arr;
-24    }
-25};
+// Last updated: 5/17/2026, 1:38:16 PM
+class Solution {
+public:
+    vector<int> pivotArray(vector<int>& nums, int pivot) {
+        //extra memory easy
+        vector<int> ans;
+        for(auto it:nums) if(it<pivot) ans.push_back(it);
+        for(auto it:nums) if(it==pivot) ans.push_back(it);
+        for(auto it:nums) if(it>pivot) ans.push_back(it);
+
+        //BASICALLY THREE WAY PARTITIONING 
+
+        return ans;
+    }
+};
