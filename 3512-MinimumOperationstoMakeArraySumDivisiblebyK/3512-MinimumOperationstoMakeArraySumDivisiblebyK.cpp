@@ -1,19 +1,17 @@
-// Last updated: 5/18/2026, 1:37:30 PM
+// Last updated: 5/18/2026, 1:44:51 PM
 1class Solution {
 2public:
-3    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
-4        set<int> res;
+3    int thirdMax(vector<int>& nums) {
+4        set<int>res(nums.begin(), nums.end());
 5
-6        for(int i=0; i<nums1.size(); i++){
-7            for(int j=0; j<nums2.size(); j++){
-8                if(nums1[i] == nums2[j]){
-9                    res.insert(nums1[i]);
-10                    break;
-11                }
-12            }
-13        }
-14        vector<int> v (res.begin(), res.end());
-15
-16        return v;
-17    }
-18};
+6        if(res.size() < 3){
+7            return *res.rbegin();
+8        }
+9
+10        auto it = res.rbegin();
+11
+12        advance(it,2);
+13
+14        return *it;
+15    }
+16};
