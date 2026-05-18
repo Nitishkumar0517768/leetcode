@@ -1,14 +1,13 @@
-// Last updated: 5/18/2026, 11:47:02 AM
+// Last updated: 5/18/2026, 12:00:17 PM
 1class Solution {
 2public:
-3    int mirrorDistance(int n) {
-4        int rev = 0;
-5        int i = n;
-6        while(i>0){
-7            rev = rev * 10 + i%10;
-8            i=i/10;
+3    int scoreOfString(string s) {
+4        int sum = 0;
+5
+6        for(int i=0; i<s.size()-1; i++){
+7            int diff = abs(s[i]-s[i+1]);
+8            sum = sum  + diff;
 9        }
-10
-11        return abs(n - rev);
-12    }
-13};
+10        return sum;
+11    }
+12};
