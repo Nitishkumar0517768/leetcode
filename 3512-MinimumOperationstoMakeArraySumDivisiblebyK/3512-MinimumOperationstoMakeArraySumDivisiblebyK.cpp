@@ -1,19 +1,18 @@
-// Last updated: 5/18/2026, 12:50:21 PM
+// Last updated: 5/18/2026, 1:05:43 PM
 1class Solution {
 2public:
-3    vector<int> singleNumber(vector<int>& nums) {
-4        unordered_map<int,int> freq;
-5        vector<int> res;
-6
-7        for(int i=0; i<nums.size(); i++){
-8            freq[nums[i]]++;
-9        }
-10
-11        for(auto it : freq){
-12            if(it.second == 1){
-13                res.push_back(it.first);
-14            }
+3    void moveZeroes(vector<int>& nums) {
+4        int count = 0;
+5
+6        for(int i=0; i<nums.size(); i++){
+7            if(nums[i] != 0){
+8                nums[count] = nums[i];
+9                count++;
+10            }
+11        }
+12
+13        for(int j=count; j<nums.size(); j++){
+14            nums[j] = 0;
 15        }
-16        return res;
-17    }
-18};
+16    }
+17};
