@@ -1,18 +1,17 @@
-// Last updated: 5/18/2026, 1:05:43 PM
+// Last updated: 5/18/2026, 1:13:16 PM
 1class Solution {
 2public:
-3    void moveZeroes(vector<int>& nums) {
-4        int count = 0;
-5
-6        for(int i=0; i<nums.size(); i++){
-7            if(nums[i] != 0){
-8                nums[count] = nums[i];
-9                count++;
-10            }
-11        }
-12
-13        for(int j=count; j<nums.size(); j++){
-14            nums[j] = 0;
-15        }
-16    }
-17};
+3    int findDuplicate(vector<int>& nums) {
+4
+5        unordered_map<int, int> freq;
+6
+7        for(int i=0; i<nums.size(); i++){
+8            freq[nums[i]]++;
+9
+10            if(freq[nums[i]] > 1){
+11                return nums[i];
+12            }
+13        }
+14        return -1;
+15    }
+16};
