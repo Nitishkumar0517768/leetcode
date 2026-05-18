@@ -1,12 +1,14 @@
-// Last updated: 5/18/2026, 11:38:43 AM
+// Last updated: 5/18/2026, 11:47:02 AM
 1class Solution {
 2public:
-3    int minOperations(vector<int>& nums, int k) {
-4        int sum = 0;
-5
-6        for(int i=0; i<nums.size(); i++){
-7            sum = sum + nums[i];
-8        }
-9        return sum % k;
-10    }
-11};
+3    int mirrorDistance(int n) {
+4        int rev = 0;
+5        int i = n;
+6        while(i>0){
+7            rev = rev * 10 + i%10;
+8            i=i/10;
+9        }
+10
+11        return abs(n - rev);
+12    }
+13};
