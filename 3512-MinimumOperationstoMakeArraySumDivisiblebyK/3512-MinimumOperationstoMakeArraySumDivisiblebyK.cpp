@@ -1,13 +1,16 @@
-// Last updated: 5/18/2026, 12:00:17 PM
+// Last updated: 5/18/2026, 12:14:02 PM
 1class Solution {
 2public:
-3    int scoreOfString(string s) {
-4        int sum = 0;
+3    int majorityElement(vector<int>& nums) {
+4       unordered_map<int, int> freq;
 5
-6        for(int i=0; i<s.size()-1; i++){
-7            int diff = abs(s[i]-s[i+1]);
-8            sum = sum  + diff;
-9        }
-10        return sum;
-11    }
-12};
+6       for(int i=0; i<nums.size(); i++){
+7            freq[nums[i]]++;
+8
+9            if(freq[nums[i]] > nums.size()/2){
+10                return nums[i];
+11            }
+12       }
+13       return 0;
+14    }
+15};
