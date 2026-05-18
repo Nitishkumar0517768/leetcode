@@ -1,16 +1,12 @@
-// Last updated: 5/18/2026, 12:14:02 PM
+// Last updated: 5/18/2026, 12:40:54 PM
 1class Solution {
 2public:
-3    int majorityElement(vector<int>& nums) {
-4       unordered_map<int, int> freq;
-5
-6       for(int i=0; i<nums.size(); i++){
-7            freq[nums[i]]++;
-8
-9            if(freq[nums[i]] > nums.size()/2){
-10                return nums[i];
-11            }
-12       }
-13       return 0;
-14    }
-15};
+3    void rotate(vector<int>& nums, int k) {
+4        int n = nums.size();
+5        k = k%n;
+6
+7        reverse(nums.begin(), nums.end());
+8        reverse(nums.begin(), nums.begin()+k);
+9        reverse(nums.begin()+k, nums.end());
+10    }
+11};
