@@ -1,14 +1,17 @@
-// Last updated: 5/24/2026, 12:24:30 PM
+// Last updated: 5/24/2026, 12:37:40 PM
 1class Solution {
 2public:
-3    bool checkIfExist(vector<int>& arr) {
-4        for(int i=0; i<arr.size()-1; i++){
-5            for(int j=i+1; j<arr.size(); j++){
-6                if(arr[i] == 2*arr[j] || arr[i]*2 == arr[j]){
-7                    return true;
-8                }
-9            }
-10        }
-11        return false;
-12    }
-13};
+3    vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+4        vector<int> res;
+5        for(int i=0; i<nums.size(); i++){
+6                int count = 0;
+7            for(int j=0; j<nums.size(); j++){
+8                if(nums[i] > nums[j]){
+9                    count ++;
+10                }
+11            }
+12            res.push_back(count);
+13        }
+14        return res;
+15    }
+16};
