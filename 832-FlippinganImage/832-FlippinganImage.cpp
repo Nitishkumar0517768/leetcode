@@ -1,17 +1,18 @@
-// Last updated: 5/24/2026, 12:37:40 PM
+// Last updated: 5/24/2026, 12:51:27 PM
 1class Solution {
 2public:
-3    vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
-4        vector<int> res;
-5        for(int i=0; i<nums.size(); i++){
-6                int count = 0;
-7            for(int j=0; j<nums.size(); j++){
-8                if(nums[i] > nums[j]){
-9                    count ++;
-10                }
-11            }
-12            res.push_back(count);
-13        }
-14        return res;
-15    }
-16};
+3    int maxProfit(vector<int>& prices) {
+4        int buy = prices[0];
+5        int profit = 0;
+6
+7        for(int i=1; i<prices.size(); i++){
+8            if(buy > prices[i]){
+9                buy = prices[i];
+10            }
+11            else if(prices[i]-buy > profit){
+12                profit = prices[i] - buy;
+13            }
+14        }
+15        return profit;
+16    }
+17};
