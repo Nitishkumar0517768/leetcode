@@ -1,4 +1,4 @@
-// Last updated: 5/5/2026, 5:16:33 PM
+// Last updated: 5/29/2026, 4:06:02 PM
 1class Solution {
 2public:
 3    int minElement(vector<int>& nums) {
@@ -10,7 +10,7 @@
 9                digit = digit + j%10;
 10                j=j/10;
 11            }
-12            // nums[i] = digit;
+12            
 13            if(min > digit){
 14                min = digit;
 15            }
