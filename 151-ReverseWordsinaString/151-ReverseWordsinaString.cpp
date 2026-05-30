@@ -1,15 +1,16 @@
-// Last updated: 5/30/2026, 9:43:14 AM
+// Last updated: 5/30/2026, 9:52:04 AM
 1class Solution {
 2public:
-3    bool isPowerOfFour(int n) {
-4        if(n <=0 ) return false;
-5
-6        int i=n;
-7        
-8        while(i != 1){
-9            if(i%4 != 0) return false;
-10            i = i/4;
-11        }
-12        return true;
-13    }
-14};
+3    void reverseString(vector<char>& s) {
+4        int i=0;
+5        int j=s.size()-1;
+6
+7        while(j>i){
+8            char temp = s[i];
+9            s[i] = s[j];
+10            s[j] = temp;
+11            i++;
+12            j--;
+13        }
+14    }
+15};
