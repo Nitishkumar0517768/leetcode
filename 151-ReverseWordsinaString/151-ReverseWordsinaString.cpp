@@ -1,4 +1,4 @@
-// Last updated: 5/30/2026, 9:36:14 AM
+// Last updated: 5/30/2026, 9:37:08 AM
 1class Solution {
 2public:
 3    bool isPowerOfThree(int n) {
