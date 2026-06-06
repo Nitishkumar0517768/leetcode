@@ -1,4 +1,4 @@
-// Last updated: 6/6/2026, 11:45:11 AM
+// Last updated: 6/6/2026, 12:01:09 PM
 1class Solution {
 2public:
 3    string removeDuplicates(string s, int k) {
@@ -8,12 +8,12 @@
 7            res.push_back(ch);
 8            if(res.size() >= k){
 9                    int count = 1;
-10                for(int i = res.size() - k + 1; i < res.size(); i++){
+10                for(int i=res.size()-k+1; i<res.size(); i++){
 11                    if(res[i] != res[i-1]){
 12                        break;
 13                    }
 14                    count++;
-15                    
+15
 16                    if(count == k){
 17                        for(int j=0; j<k; j++){
 18                            res.pop_back();
