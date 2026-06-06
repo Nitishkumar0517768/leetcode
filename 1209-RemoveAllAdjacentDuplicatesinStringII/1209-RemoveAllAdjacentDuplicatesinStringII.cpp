@@ -1,4 +1,4 @@
-// Last updated: 6/6/2026, 12:01:09 PM
+// Last updated: 6/6/2026, 1:34:27 PM
 1class Solution {
 2public:
 3    string removeDuplicates(string s, int k) {
@@ -15,14 +15,12 @@
 14                    count++;
 15
 16                    if(count == k){
-17                        for(int j=0; j<k; j++){
-18                            res.pop_back();
-19                        }
-20                    }
-21                }
-22            }
-23            
-24        }
-25        return res;
-26    }
-27};
+17                        res.erase(res.end()-k, res.end());
+18                    }
+19                }
+20            }
+21            
+22        }
+23        return res;
+24    }
+25};
