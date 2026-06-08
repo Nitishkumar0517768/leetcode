@@ -1,16 +1,12 @@
-// Last updated: 6/8/2026, 11:55:45 AM
+// Last updated: 6/8/2026, 11:59:05 AM
 1class Solution {
 2public:
-3    bool containsDuplicate(vector<int>& nums) {
-4        unordered_set<int> st;
-5
-6        for(int num : nums){
-7            if(st.find(num) != st.end()){
-8                return true;
-9            }
-10            st.insert(num);
-11        }
-12
-13        return false;
-14    }
-15};
+3    bool containsNearbyDuplicate(vector<int>& nums, int k) {
+4        for(int i=0; i<nums.size()-1; i++){
+5            for(int j=i+1; j<nums.size() && abs(i-j)<=k; j++){
+6                if(nums[i] == nums[j]) return true;
+7            }
+8        }
+9        return false;
+10    }
+11};
