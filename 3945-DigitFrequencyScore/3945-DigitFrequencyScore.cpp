@@ -1,21 +1,12 @@
-// Last updated: 6/6/2026, 1:31:19 PM
+// Last updated: 6/13/2026, 10:19:39 AM
 1class Solution {
 2public:
 3    int digitFrequencyScore(int n) {
-4        unordered_map<int,int> freq;
-5
-6        int i=n;
-7        while(i>0){
-8            int digit = i%10;
-9            freq[digit]++;
-10            i=i/10;
-11        }
-12
-13        int sum = 0;
-14
-15        for(auto it : freq){
-16            sum = sum + (it.first*it.second);
-17        }
-18        return sum;
-19    }
-20};
+4        int sum = 0;
+5        while(n>0){
+6            sum = sum + n%10;
+7            n = n/10;
+8        }
+9        return sum;
+10    }
+11};
