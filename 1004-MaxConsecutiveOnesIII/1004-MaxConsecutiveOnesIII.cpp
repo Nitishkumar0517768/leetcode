@@ -1,4 +1,4 @@
-// Last updated: 7/14/2026, 2:23:35 PM
+// Last updated: 7/14/2026, 2:24:13 PM
 1class Solution {
 2public:
 3    int longestOnes(vector<int>& nums, int k) {
