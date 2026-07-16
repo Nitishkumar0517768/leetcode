@@ -1,18 +1,15 @@
-// Last updated: 5/11/2026, 11:41:54 AM
+// Last updated: 7/16/2026, 9:12:18 PM
 1class Solution {
 2public:
-3    vector<int> plusOne(vector<int>& digits) {
-4
-5        for(int i=digits.size()-1; i>=0; i--){
-6            if(digits[i] < 9){
-7                digits[i] += 1;
-8                return digits;
-9            } 
-10            digits[i] = 0;
-11            
-12        }
-13        digits.insert(digits.begin(), 1);
-14
-15        return digits;
-16    }
-17};
+3    int removeElement(vector<int>& nums, int val) {
+4        int k = 0;
+5
+6        for(int i=0; i<nums.size(); i++){
+7            if(nums[i] != val){
+8                nums[k] = nums[i];
+9                k++;
+10            }
+11        }
+12        return k;
+13    }
+14};
