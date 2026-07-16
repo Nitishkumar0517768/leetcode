@@ -1,14 +1,27 @@
-// Last updated: 5/11/2026, 8:25:30 AM
+// Last updated: 7/16/2026, 3:36:25 PM
 1class Solution {
 2public:
-3    int findClosestNumber(vector<int>& nums) {
-4        int res = nums[0];
-5
-6        for(int i=1; i<nums.size(); i++){
-7            if(abs(nums[i]) < abs(res) || (abs(nums[i]) == abs(res) && nums[i] > res)){
-8                res = nums[i];
-9            }
-10        }
-11        return res;
-12    }
-13};
+3    int maxArea(vector<int>& height) {
+4        int left = 0;
+5        int right = height.size()-1;
+6        int max = 0;
+7
+8        while(right > left){
+9            int temp = 0;
+10            int mini = min(height[left], height[right]);
+11            temp = mini * (right-left);
+12
+13            if(temp > max){
+14                max = temp;
+15            }
+16
+17            if(height[left] > height[right]){
+18                right--;
+19            }
+20            else{
+21                left++;
+22            }
+23        }
+24        return max;
+25    }
+26};
