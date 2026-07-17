@@ -1,19 +1,21 @@
-// Last updated: 4/13/2026, 1:35:06 PM
+// Last updated: 7/17/2026, 2:57:55 PM
 1class Solution {
 2public:
 3    bool uniqueOccurrences(vector<int>& arr) {
 4        unordered_map<int, int> freq;
-5
-6        for(int val : arr){
-7            freq[val]++;
-8        }
-9
-10        unordered_set<int> count;
-11
-12        for(auto it : freq){
-13            count.insert(it.second);
-14        }
-15
-16        return count.size() == freq.size();
-17    }
-18};
+5        for(int i=0; i<arr.size(); i++){
+6            freq[arr[i]]++;
+7        }
+8
+9        unordered_set<int> st;
+10        for(auto &it : freq){
+11            if(!st.count(it.second)){
+12                st.insert(it.second);
+13            }
+14            else{
+15                return false;
+16            }
+17        }
+18        return true;
+19    }
+20};
