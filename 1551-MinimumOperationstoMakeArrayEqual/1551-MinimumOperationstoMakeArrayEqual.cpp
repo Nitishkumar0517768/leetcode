@@ -1,4 +1,4 @@
-// Last updated: 7/21/2026, 5:51:26 PM
+// Last updated: 7/22/2026, 9:20:57 PM
 1class Solution {
 2public:
 3    int minOperations(int n) {
