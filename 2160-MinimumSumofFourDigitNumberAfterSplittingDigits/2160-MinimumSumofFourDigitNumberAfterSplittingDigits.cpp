@@ -1,4 +1,4 @@
-// Last updated: 7/24/2026, 9:18:26 PM
+// Last updated: 7/24/2026, 9:20:03 PM
 1class Solution {
 2public:
 3    int minimumSum(int num) {
@@ -13,15 +13,9 @@
 12
 13        sort(nums.begin(), nums.end());
 14
-15        int i=0;
-16        int j=nums.size()-1;
-17        int sum = 0;
-18
-19        while(j>i){
-20            sum += (nums[i]*10 + nums[j]);
-21            i++; 
-22            j--;
-23        }
-24        return sum;
-25    }
-26};
+15        int new1 = nums[0] * 10 + nums[2];
+16        int new2 = nums[1] * 10 + nums[3];
+17
+18        return new1 + new2;
+19    }
+20};
