@@ -1,24 +1,19 @@
-// Last updated: 7/27/2026, 3:34:22 PM
+// Last updated: 7/27/2026, 3:36:20 PM
 1class Solution {
 2public:
 3    int maxProduct(vector<int>& nums) {
-4        int max = 0;
-5        int maxi = -1;
-6        int secMax = 0;
-7        int secMaxi = -1;
-8
-9        for(int i=0; i<nums.size(); i++){
-10            if(nums[i] > max){
-11                secMax = max;
-12                secMaxi = maxi;
-13                max = nums[i];
-14                maxi = i;
-15            }
-16            else if(nums[i] > secMax){
-17                secMax = nums[i];
-18                secMaxi = i;
-19            }
-20        }
-21        return (nums[maxi]-1) * (nums[secMaxi]-1);
-22    }
-23};
+4        int max = INT_MIN;
+5        int secMax = INT_MIN;
+6
+7        for(int i=0; i<nums.size(); i++){
+8            if(nums[i] > max){
+9                secMax = max;
+10                max = nums[i];
+11            }
+12            else if(nums[i] > secMax){
+13                secMax = nums[i];
+14            }
+15        }
+16        return (max-1) * (secMax-1);
+17    }
+18};
