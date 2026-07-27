@@ -1,4 +1,4 @@
-// Last updated: 5/14/2026, 8:14:19 AM
+// Last updated: 7/27/2026, 8:58:54 AM
 1class Solution {
 2public:
 3    int maxProduct(vector<int>& nums) {
@@ -6,7 +6,7 @@
 5        int secMax = INT_MIN;
 6
 7        for(int i=0; i<nums.size(); i++){
-8            if(max < nums[i]){
+8            if(nums[i] > max){
 9                secMax = max;
 10                max = nums[i];
 11            }
