@@ -1,20 +1,18 @@
-// Last updated: 6/15/2026, 9:15:17 AM
+// Last updated: 7/28/2026, 3:19:17 PM
 1class Solution {
 2public:
 3    int mostWordsFound(vector<string>& sentences) {
-4        int count = 0;
+4        int maxW = 0;
 5
 6        for(int i=0; i<sentences.size(); i++){
-7            int words = 1;
+7            int count = 1;
 8            for(int j=0; j<sentences[i].size(); j++){
-9                if(sentences[i][j] == ' '){
-10                    words++;
+9                if(sentences[i][j] == ' ' ){
+10                    count++;
 11                }
 12            }
-13            if(words > count){
-14                count = words;
-15            }
-16        }
-17        return count;
-18    }
-19};
+13            maxW = max(maxW, count);
+14        }
+15        return maxW;
+16    }
+17};
