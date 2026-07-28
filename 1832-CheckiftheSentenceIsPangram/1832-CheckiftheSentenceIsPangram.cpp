@@ -1,13 +1,11 @@
-// Last updated: 5/12/2026, 9:33:12 PM
+// Last updated: 7/28/2026, 2:55:26 PM
 1class Solution {
 2public:
-3    string defangIPaddr(string address) {
-4        for(int i=0; i<address.size(); i++){
-5            if(address[i] == '.'){
-6                address.replace(i, 1, "[.]");
-7                i += 2;
-8            }
-9        }
-10        return address;
-11    }
-12};
+3    bool checkIfPangram(string sentence) {
+4        set<char> res(sentence.begin(), sentence.end());
+5
+6        if(res.size() < 26) return false;
+7
+8        return true;
+9    }
+10};
