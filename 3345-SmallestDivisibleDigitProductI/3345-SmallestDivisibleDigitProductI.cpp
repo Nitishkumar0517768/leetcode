@@ -1,4 +1,4 @@
-// Last updated: 4/24/2026, 9:50:13 AM
+// Last updated: 8/6/2026, 9:14:02 AM
 1class Solution {
 2public:
 3    int smallestNumber(int n, int t) {
