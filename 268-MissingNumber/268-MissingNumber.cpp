@@ -1,4 +1,4 @@
-// Last updated: 8/8/2026, 11:23:08 PM
+// Last updated: 8/8/2026, 11:23:12 PM
 1class Solution {
 2public:
 3    int missingNumber(vector<int>& nums) {
