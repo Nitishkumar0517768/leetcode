@@ -1,29 +1,19 @@
-// Last updated: 7/17/2026, 5:12:18 PM
+// Last updated: 8/8/2026, 11:01:09 AM
 1class Solution {
 2public:
-3    long long maximumSubarraySum(vector<int>& nums, int k) {
-4        unordered_map<int,int> freq;
-5        int left = 0;
-6        long long int sum = 0;
-7        long long int ans = 0;
-8        
-9        for(int right=0; right<nums.size(); right++){
-10            sum+=nums[right];
-11            freq[nums[right]]++;
-12
-13            if(right-left+1 > k){
-14                sum -= nums[left];
-15                freq[nums[left]]--;
-16
-17                if(freq[nums[left]]==0){
-18                    freq.erase(nums[left]);
-19                }
-20                left++;
-21            }
-22            if(freq.size()==k){
-23                ans = max(ans,sum);
-24            }
-25        }
-26        return ans;
-27    }
-28};
+3    int missingNumber(vector<int>& nums) {
+4        int n = nums.size();
+5        vector<int> v(n+1, -1);
+6
+7        for(int i=0; i<n; i++){
+8            v[nums[i]] = nums[i];
+9        }
+10
+11        for(int i=0; i<v.size(); i++){
+12            if(v[i] == -1){
+13                return i;
+14            }
+15        }
+16        return n;
+17    }
+18};
