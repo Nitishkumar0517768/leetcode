@@ -1,4 +1,4 @@
-// Last updated: 8/10/2026, 3:42:00 PM
+// Last updated: 8/10/2026, 4:41:48 PM
 1/**
 2 * Definition for singly-linked list.
 3 * struct ListNode {
@@ -11,25 +11,32 @@
 10 */
 11class Solution {
 12public:
-13    ListNode* deleteDuplicates(ListNode* head) {
-14        ListNode* temp = new ListNode(0);
-15        temp->next = head;
-16        ListNode* prev = temp;
-17        ListNode* curr = head;
-18
-19        while(curr != nullptr && curr->next != nullptr){
-20            if(curr->val == curr->next->val){
-21                while(curr->next != nullptr && curr->val == curr->next->val){
-22                    curr = curr->next;
-23                }
-24                curr = curr->next;
-25                prev->next = curr;
-26            }
-27            else{
-28                prev = curr;
-29                curr = curr->next;
-30            }
-31        }
-32        return temp->next;
-33    }
-34};
+13    bool isPalindrome(ListNode* head) {
+14        ListNode* slow = head;
+15        ListNode* fast = head;
+16        ListNode* curr = head;
+17
+18        while(fast != nullptr && fast->next != nullptr){
+19            slow = slow->next;
+20            fast = fast->next->next;
+21        }
+22
+23        ListNode* prev = nullptr;
+24
+25        while(slow != nullptr){
+26            ListNode* nextNode = slow->next;
+27            slow->next = prev;
+28            prev = slow;
+29            slow = nextNode;
+30        }
+31
+32        while(prev != nullptr){
+33            if(prev->val != curr->val){
+34                return false;
+35            }
+36            prev = prev->next;
+37            curr = curr->next;
+38        }
+39        return true;
+40    }
+41};
