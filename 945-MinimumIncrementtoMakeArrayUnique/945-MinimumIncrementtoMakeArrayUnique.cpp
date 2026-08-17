@@ -1,4 +1,4 @@
-// Last updated: 8/17/2026, 3:11:06 PM
+// Last updated: 8/17/2026, 3:12:39 PM
 1class Solution {
 2public:
 3    int minIncrementForUnique(vector<int>& nums) {
@@ -15,5 +15,19 @@
 14            }
 15        }
 16        return count;
-17    }
-18};
+17
+18
+19        // method - 2 (TLE 56/64)
+20        // unordered_set<int> st;
+21        // int count = 0;
+22
+23        // for(int i=0; i<nums.size(); i++){
+24        //     while(st.count(nums[i])){
+25        //         nums[i]++;
+26        //         count++;
+27        //     }
+28        //     st.insert(nums[i]);
+29        // }
+30        // return count;
+31    }
+32};
