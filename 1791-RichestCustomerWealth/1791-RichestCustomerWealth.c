@@ -1,0 +1,19 @@
+// Last updated: 8/18/2026, 11:49:42 AM
+int maximumWealth(int** accounts, int accountsSize, int* accountsColSize) {
+    int max = 0;
+    int sum = 0;
+
+    for(int i=0; i<accountsSize; i++){
+        sum = 0;
+
+        for(int j=0; j<accountsColSize[i]; j++){
+            sum += accounts[i][j];
+        }
+
+        if(sum > max){
+            max = sum;
+        }
+
+    }
+    return max;
+}
