@@ -1,4 +1,4 @@
-// Last updated: 8/22/2026, 10:18:12 PM
+// Last updated: 8/22/2026, 10:18:39 PM
 1class Solution {
 2public:
 3    bool checkDivisibility(int n) {
