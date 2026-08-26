@@ -1,17 +1,20 @@
-// Last updated: 5/16/2026, 9:10:05 PM
+// Last updated: 8/26/2026, 4:38:24 PM
 1class Solution {
 2public:
 3    int findMin(vector<int>& nums) {
-4        // sort(nums.begin(), nums.end());
-5        // return nums[0];
+4        int left = 0;
+5        int right = nums.size()-1;
 6
-7        int min = INT_MAX;
-8
-9        for(int i=0; i<nums.size(); i++){
-10            if(nums[i] < min){
-11                min = nums[i];
+7        while(right > left){
+8            int mid = left + (right-left)/2;
+9
+10            if(nums[mid] > nums[right]){
+11                left = mid + 1;
 12            }
-13        }
-14        return min;
-15    }
-16};
+13            else{
+14                right = mid;
+15            }
+16        }
+17        return nums[left];
+18    }
+19};
