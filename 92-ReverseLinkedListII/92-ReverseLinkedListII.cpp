@@ -1,4 +1,4 @@
-// Last updated: 8/16/2026, 5:22:58 PM
+// Last updated: 9/9/2026, 3:44:56 PM
 1/**
 2 * Definition for singly-linked list.
 3 * struct ListNode {
@@ -12,28 +12,45 @@
 11class Solution {
 12public:
 13    ListNode* reverseBetween(ListNode* head, int left, int right) {
-14        
-15        ListNode* temp = new ListNode(0);
-16        temp->next = head;
-17        ListNode* curr = temp;
+14
+15        if(left == right){
+16            return head;
+17        }
 18
-19        for(int i=1; i<left; i++){
-20            curr = curr->next;
-21        }
+19        if(left == 1){
+20            ListNode* curr = head;
+21            ListNode* rev = nullptr;
 22
-23        ListNode* start = curr->next;
-24        ListNode* curr1 = start;
-25        ListNode* prv = nullptr;
-26
-27        for(int j=left; j<= right; j++){
-28            ListNode* nxtNode = curr1->next;
-29            curr1->next = prv;
-30            prv = curr1; 
-31            curr1 = nxtNode;
+23            for(int i=left; i<= right; i++){
+24                ListNode* nxt = curr->next;
+25                curr->next = rev;
+26                rev = curr;
+27                curr = nxt;
+28            }
+29            head->next = curr;
+30            
+31            return rev;
 32        }
-33        curr->next = prv;
-34        start->next = curr1;
+33
+34        ListNode* curr = head;
 35
-36        return temp->next;
-37    }
-38};
+36        for(int i=1; i<left-1; i++){
+37            curr = curr->next;
+38        }
+39
+40        ListNode* last = curr->next;
+41        ListNode* temp = curr->next;
+42        ListNode* rev = nullptr;
+43
+44        for(int i=left; i<=right; i++){
+45            ListNode* nxt = temp->next;
+46            temp->next = rev;
+47            rev = temp;
+48            temp = nxt;
+49        }
+50        curr->next = rev;
+51        last->next = temp;
+52
+53        return head;
+54    }
+55};
