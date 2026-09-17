@@ -1,4 +1,4 @@
-// Last updated: 9/17/2026, 10:10:29 AM
+// Last updated: 9/17/2026, 10:30:54 AM
 1/**
 2 * Definition for singly-linked list.
 3 * struct ListNode {
@@ -12,41 +12,28 @@
 11class Solution {
 12public:
 13    ListNode* oddEvenList(ListNode* head) {
-14        if (head == nullptr || head->next == nullptr ||
-15            head->next->next == nullptr) {
+14        
+15        if(head == nullptr || head->next == nullptr){
 16            return head;
 17        }
 18
-19        ListNode* curr = head;
-20        ListNode* temp = nullptr;
-21        ListNode* head1 = nullptr;
+19        ListNode* i = head;
+20        ListNode* j = head->next;
+21        ListNode* head2 = j;
 22
-23        while (curr->next != nullptr && curr->next->next != nullptr) {
-24
-25            if (head1 == nullptr) {
-26                head1 = curr->next;
-27                temp = head1;
-28
-29                curr->next = curr->next->next;
-30                curr = curr->next;
-31            } else {
-32                temp->next = curr->next;
-33                temp = temp->next;
-34
-35                curr->next = curr->next->next;
-36                curr = curr->next;
-37            }
-38        }
-39
-40        if (curr->next != nullptr) {
-41            temp->next = curr->next;
-42            temp = temp->next;
-43            curr->next = nullptr;
-44        }
-45
-46        temp->next = nullptr;
-47        curr->next = head1;
-48
-49        return head;
-50    }
-51};
+23        while( j != nullptr && j->next != nullptr ){
+24            i->next = j->next;
+25            i = i->next;
+26
+27            j->next = i->next;
+28            j = j->next;
+29        }
+30
+31        i->next = head2;
+32
+33        if(j != nullptr){
+34            j->next = nullptr;
+35        }
+36        return head;
+37    }
+38};
