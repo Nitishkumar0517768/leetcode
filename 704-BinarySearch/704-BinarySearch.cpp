@@ -1,25 +1,23 @@
-// Last updated: 6/17/2026, 10:03:21 AM
+// Last updated: 9/30/2026, 10:24:05 PM
 1class Solution {
 2public:
 3    int search(vector<int>& nums, int target) {
-4
-5        int left = 0;
-6        int right = nums.size()-1;
-7
-8        while(left <= right){
-9            int mid = (left + right)/2;
-10
-11            if(nums[mid] == target){
-12                return mid;
-13            }
-14
-15            if(nums[mid] < target){
-16                left = mid+1;
-17            }
-18            else{
-19                right = mid-1;
-20            }
-21        }
-22        return -1;
-23    }
-24};
+4        int low = 0;
+5        int high = nums.size()-1;
+6
+7        while(low <= high){
+8            int mid = low + (high-low)/2;
+9
+10            if(nums[mid] == target){
+11                return mid;
+12            }
+13            else if(nums[mid] > target){
+14                high = mid - 1;
+15            }
+16            else{
+17                low = mid + 1;
+18            }
+19        }
+20        return -1;
+21    }
+22};
