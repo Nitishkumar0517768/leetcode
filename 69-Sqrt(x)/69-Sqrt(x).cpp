@@ -1,4 +1,4 @@
-// Last updated: 10/2/2026, 2:17:29 PM
+// Last updated: 10/12/2026, 4:57:43 PM
 1class Solution {
 2public:
 3    int mySqrt(int x) {
