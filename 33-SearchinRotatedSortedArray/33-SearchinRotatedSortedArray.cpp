@@ -1,8 +1,8 @@
-// Last updated: 10/12/2026, 5:54:56 PM
+// Last updated: 10/12/2026, 5:58:31 PM
 1class Solution {
 2public:
 3    int search(vector<int>& nums, int target) {
-4        int low = 0; 
+4        int low = 0;
 5        int high = nums.size() - 1;
 6
 7        while(low <= high){
@@ -11,9 +11,9 @@
 10            if(nums[mid] == target){
 11                return mid;
 12            }
-13            
+13
 14            if(nums[low] <= nums[mid]){
-15                if(nums[low] <= target && nums[mid] >= target){
+15                if(nums[low] <= target && target <= nums[mid]){
 16                    high = mid - 1;
 17                }
 18                else{
@@ -21,7 +21,7 @@
 20                }
 21            }
 22            else{
-23                if(nums[mid] <= target && nums[high] >= target){
+23                if(nums[mid] <= target && target <= nums[high]){
 24                    low = mid + 1;
 25                }
 26                else{
